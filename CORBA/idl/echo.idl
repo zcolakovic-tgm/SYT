@@ -1,0 +1,12 @@
+#ifndef __CALCULATOR_IDL__
+#define __CALCULATOR_IDL__
+module calculator {
+
+	interface Calculate {
+		long add(in long a, in long b);
+		long sub(in long a, in long b);
+		long mult(in long a, in long b);
+		long div(in long a, in long b);
+	};
+};
+#endif  // __CALCULATOR_IDL__
