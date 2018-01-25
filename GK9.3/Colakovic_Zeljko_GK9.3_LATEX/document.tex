@@ -1,0 +1,88 @@
+\documentclass[letterpaper, 12pt,ngerman]{article}
+%%%%%%%%%%%%%%%%%%%%
+%Load Userpackage
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+% DEFINITIONS    
+% Change those informations 
+% If you need umlauts you have to escape them, e.g. for an ü you have % to write "u
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\gdef\mytitle{SYT}
+\gdef\mythema{Distributed Computing GK9.3}         
+
+\gdef\mysubject{SYT}
+\gdef\mycourse{5BHIT 2017/18}
+\gdef\myauthor{Zeljko Colakovic}
+  
+\gdef\myversion{1.0}
+\gdef\mybegin{30:11.2017}
+\gdef\myfinish{25.01.2018}
+
+\gdef\mygrade{Note:} 
+\gdef\myteacher{Betreuer: BORM}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input special/preamble.tex 
+
+\let\tempsection\section 
+\renewcommand\section[1]{\vspace{-0.3cm}\tempsection{#1}\vspace{-0.3cm}}
+\WithSuffix\newcommand\section*[1]{\tempsection*{#1}}
+
+\let\tempsubsection\subsection
+\renewcommand\subsection[1]{\vspace{0cm}\tempsubsection{#1}\vspace{0cm}}
+
+\let\tempsubsubsection\subsubsection
+\renewcommand\subsubsection[1]{\vspace{0cm}\tempsubsubsection{#1}\vspace{0cm}}
+
+\linespread{0.94}
+
+\lhead{\mysubject}
+\chead{}
+\rhead{\bfseries\mythema}
+\lfoot{\mycourse}
+\cfoot{\thepage}
+% Creative Commons license BY
+% http://creativecommons.org/licenses/?lang=de
+\rfoot{\ccby\hspace{2mm}\myauthor}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+\parindent 0pt
+\parskip 6pt
+
+\pagenumbering{Roman} 
+\input{special/title}
+
+\clearpage
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\input sections/task.tex
+\input sections/implementation.tex
+\newpage
+\lstlistoflistings
+\listoffigures
+\clearpage
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}
